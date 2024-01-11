@@ -1,0 +1,32 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="PersistenceUnit">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>Person</class>
+		<class>Kunde</class>
+		<class>Fahrzeug</class>
+		<class>Mitarbeiter</class>
+		<class>Ladestation</class>
+		
+		<properties>
+			<property name="hibernate.connection.pool_size" value="10" />
+			<property name="hibernate.connection.driver_class"
+				value="oracle.jdbc.driver.OracleDriver" />
+			<property name="hibernate.connection.url"
+				value="jdbc:oracle:thin:@172.22.160.22:1521:xe" />
+			<property name="hibernate.connection.username"
+				value="C##FBPOOL117" />
+			<property name="hibernate.connection.password"
+				value="oracle" />
+
+			<property name="dialect"
+				value="org.hibernate.dialect.Oracle10gDialect" />
+			<property
+				name="jakarta.persistence.schema-generation.database.action"
+				value="drop-and-create" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
